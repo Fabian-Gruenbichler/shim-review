@@ -322,3 +322,19 @@ kernel image and signed using an ephemeral RSA key.
 *******************************************************************************
 ### Add any additional information you think we may need to validate this shim.
 *******************************************************************************
+fwupd-efi packaging tree for our upcoming bookworm releases, based on Debian bookworm packaging:
+- https://git.proxmox.com/?p=fwupd-efi.git;a=tree;h=refs/heads/proxmox/bookworm;hb=refs/heads/proxmox/bookworm
+
+grub2 packaging tree, same
+- https://git.proxmox.com/?p=grub2.git;a=tree;h=refs/heads/proxmox/bookworm;hb=refs/heads/proxmox/bookworm
+
+kernel packaging tree, packaging is custom:
+- https://git.proxmox.com/?p=pve-kernel.git;a=tree;h=refs/heads/wip-secureboot;hb=refs/heads/wip-secureboot
+
+the kernel packages consist of packaging files (custom, directly in the repository), kernel sources (based on Ubuntu Lunar's, which are in turn based on upstream 6.2.x, included via git submodule in `submodules/ubuntu-kernel`), zfs module sources (based on our OpenZFS packaging, which is based on Debian's, included via (nested!) git submodule(s) in `submodules/zfsonlinux`) and kernel patches (in `patches/kernel`).
+
+to get all of the kernel build files a recursive clone can be used `git clone --recursive git://git.proxmox.com/git/pve-kernel.git -b wip-secureboot`. as the branch name implies, this is the current working copy for our upcoming release, it isn't yet released or finalized.
+
+
+changes since original review request:
+- added additional information regarding non-shim package sources
