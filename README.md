@@ -235,7 +235,8 @@ shim.proxmox,1,Proxmox,shim,15.7,https://git.proxmox.com/?p=efi-boot-shim.git
 
 sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
 grub,3,Free Software Foundation,grub,2.06,https://www.gnu.org/software/grub/
-grub.proxmox,1,Proxmox,grub2,2.06-8.1+pmx1,https://git.proxmox.com/?p=grub2.git
+grub.debian,4,Debian,grub2,2.06-13,https://tracker.debian.org/pkg/grub2
+grub.proxmox,1,Proxmox,grub2,2.06-13+pmx1,https://git.proxmox.com/?p=grub2.git
 
 sbat,1,UEFI shim,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
 fwupd-efi,1,Firmware update daemon,fwupd-efi,1.4,https://github.com/fwupd/fwupd-efi
@@ -339,4 +340,6 @@ to get all of the kernel build files a recursive clone can be used `git clone --
 changes since original review request:
 - added additional information regarding non-shim package sources
 - changed Grub 2 vendor SBAT from 3 to 1
+- include Debian SBAT entry for Grub
+- update Grub SBAT and version to current Debian bookworm base
 -- no packages have been signed yet for Grub 2 using the production keys!
