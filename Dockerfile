@@ -1,6 +1,6 @@
 # Adapted from Debian's shim-review request
 
-FROM debian:bookworm-20240507
+FROM debian:bookworm-20240423
 RUN apt-get update -y
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends ca-certificates
 
@@ -21,7 +21,7 @@ WORKDIR /
 
 # Download and verify the upstream source tarball for shim
 RUN wget https://github.com/rhboot/shim/releases/download/15.8/shim-15.8.tar.bz2
-RUN echo "a79f0a9b89f3681ab384865b1a46ab3f79d88b11b4ca59aa040ab03fffae80a9  ../shim_15.8.orig.tar.bz2" > SHA256SUM
+RUN echo "a79f0a9b89f3681ab384865b1a46ab3f79d88b11b4ca59aa040ab03fffae80a9  shim-15.8.tar.bz2" > SHA256SUM
 RUN sha256sum -c < SHA256SUM
 
 # Rename the tarball to match what our packaging tools look for
