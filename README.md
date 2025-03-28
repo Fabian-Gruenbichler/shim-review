@@ -225,7 +225,8 @@ Yes. Our kernels are currently based on 6.8/6.11.
 ### with Secure Boot enabled?
 Hint: If it does not, we are not likely to sign your shim.
 *******************************************************************************
-[your text here]
+Using all the standard upstream mechanisms/security features, most prominently
+the `lockdown` LSM.
 
 *******************************************************************************
 ### Do you build your signed kernel with additional local patches? What do they do?
