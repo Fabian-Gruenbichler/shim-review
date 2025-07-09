@@ -196,6 +196,10 @@ CVEs from February '25 (SBAT 5), following Ubuntu/Debian's lead we have revert
 part of the NTFS fixes for those since they contained a regression (NTFS is
 disabled in Grub now under lockdown anyway).
 
+A previous fix for the NTFS vulnerabilities from February 2025 was incomplete,
+this was specific to our variant of Grub, as a result we have bumped the Grub
+SBAT level with our vendor suffix to '2'.
+
 *******************************************************************************
 ### If shim is loading GRUB2 bootloader, and if these fixes have been applied, is the upstream global SBAT generation in your GRUB2 binary set to 4?
 Skip this, if you're not using GRUB2, otherwise do you have an entry in your GRUB2 binary similar to:  
@@ -346,8 +350,8 @@ grub:
 ```
 sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
 grub,5,Free Software Foundation,grub,2.06,https://www.gnu.org/software/grub/
-grub.debian,4,Debian,grub2,2.06-13+pmx6,https://tracker.debian.org/pkg/grub2
-grub.proxmox,1,Proxmox,grub2,2.06-13+pmx6,https://git.proxmox.com/?p=grub2.git
+grub.debian,4,Debian,grub2,2.06-13+pmx7,https://tracker.debian.org/pkg/grub2
+grub.proxmox,2,Proxmox,grub2,2.06-13+pmx7,https://git.proxmox.com/?p=grub2.git
 ```
 
 shim:
@@ -392,7 +396,7 @@ Not applicable.
 *******************************************************************************
 ### What is the origin and full version number of your bootloader (GRUB2 or systemd-boot or other)?
 *******************************************************************************
-Based on Debian Bookworm's 2.0.6-13+deb12u1, packaged as 2.0.6-13+pmx6
+Based on Debian Bookworm's 2.0.6-13+deb12u1, packaged as 2.0.6-13+pmx7
 We do plan on supporting systemd-boot on x64_64/amd64 once the packaging and
 policies on the Debian side are finalized, once we rebase on top of Debian
 Trixie (separate shim submission).
